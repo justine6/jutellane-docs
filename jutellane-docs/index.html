@@ -8,26 +8,35 @@
 </head>
 <body>
   <header>
-    <h1>Jutellane Docs</h1>
+    <div class="wrap">
+      <!-- Optional logo: place a 40x40 (or larger) image at jutellane-docs/assets/logo.png -->
+      <img class="logo" src="./assets/logo.png" alt="Jutellane logo" onerror="this.style.display='none'">
+      <h1>Jutellane Docs</h1>
+    </div>
   </header>
 
   <nav aria-label="Primary">
-    <ul>
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="./getting-started.html">Getting Started</a></li>
-      <li><a href="./tooling-setup.html">Tooling Setup</a></li>
-      <li><a href="./cicd-pipelines.html">CI/CD Pipelines</a></li>
-    </ul>
+    <div class="wrap">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./getting-started.html">Getting Started</a></li>
+        <li><a href="./tooling-setup.html">Tooling Setup</a></li>
+        <li><a href="./cicd-pipelines.html">CI/CD Pipelines</a></li>
+      </ul>
+    </div>
   </nav>
+
+  <div class="hero">
+    <div class="inner">
+      <h2>Welcome to Jutellane Docs</h2>
+      <p>Reliable tooling, pipelines, and practices for confident delivery.</p>
+    </div>
+  </div>
 
   <main>
     <section>
-      <h2>Welcome to Jutellane Docs</h2>
-      <p>
-        This site documents our <strong>tooling</strong>, <strong>pipelines</strong>, and
-        <strong>practices</strong> for reliable delivery.
-      </p>
-      <p>Ready to ship with confidence? Start here:</p>
+      <h2>Start Here</h2>
+      <p>New to the stack? Follow the step-by-step guide to get productive fast.</p>
       <p><a href="./getting-started.html">Getting Started →</a></p>
     </section>
 
@@ -40,14 +49,10 @@
     </section>
 
     <section>
-      <h2>Example: Run a Local Preview</h2>
-      <p>From the project root, run:</p>
-      <pre><code>npm install
-npm run dev</code></pre>
-      <p>
-        Visit <code>http://localhost:3000</code> (or your configured port) to
-        verify that everything compiles and the docs render correctly.
-      </p>
+      <h2>Example Command</h2>
+      <pre><code>pnpm install   # or: npm install
+pnpm run dev   # or: npm run dev</code></pre>
+      <p>Open <code>http://localhost:3000</code> to preview changes.</p>
     </section>
   </main>
 
@@ -55,9 +60,6 @@ npm run dev</code></pre>
     © <span id="y"></span> Jutellane. All rights reserved.
   </footer>
 
-  <script>
-    // year stamp
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
