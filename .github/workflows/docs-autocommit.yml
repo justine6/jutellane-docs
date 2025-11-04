@@ -1,0 +1,45 @@
+name: Docs • Build & Commit (Git Deploy)
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "**/*.html"
+      - "**/*.css"
+      - "public/**"
+      - "templates/**"
+      - "_partials/**"
+      - "build-Docs.ps1"
+  workflow_dispatch:
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build static docs
+        shell: pwsh
+        run: ./build-Docs.ps1
+
+      - name: Commit built pages if changed
+        shell: bash
+        run: |
+          set -e
+          git config user.name  "jutellane-bot"
+          git config user.email "jutellane-bot@users.noreply.github.com"
+
+          # Only commit "built" files (top-level HTML + assets). Avoid partials/templates.
+          git add -A \
+            *.html styles.css public/ vercel.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(docs): rebuild static pages [skip ci]"
+            git push
+          fi

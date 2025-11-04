@@ -1,14 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Getting Started</title>
-  <link rel="icon" href="/favicon.ico"/>
-  <link rel="stylesheet" href="/styles.css"/>
-</head>
-<body>
-  <header class="container">
+<header class="container">
   <a href="/index.html" style="display:flex;gap:.5rem;align-items:center;text-decoration:none;">
     <img class="logo" src="/public/logo.png" alt="Jutellane logo" />
     <strong>Jutellane Docs</strong>
@@ -23,9 +13,9 @@
 <!-- Active link highlighter -->
 <script>
 (function () {
-  var p = location.pathname.replace(/^/?|.html$/g, "");
+  var p = location.pathname.replace(/^\\/?|\\.html$/g, "");
   document.querySelectorAll("nav a").forEach(function(a){
-    var t = (a.getAttribute("href")||"").replace(/^/?|.html$/g, "");
+    var t = (a.getAttribute("href")||"").replace(/^\\/?|\\.html$/g, "");
     if (t && t === p) { a.style.fontWeight="600"; a.style.textDecoration="underline"; }
   });
 }());
@@ -34,12 +24,18 @@
 
 
 
-  <main class="container">
-    <h1>Getting Started</h1>
-<p>Open the site or serve locally. More details coming soon.</p>
-
-  </main>
-  <footer class="container">
+<main class="container">
+  <h1>Sitemap</h1>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/architecture">Architecture</a></li>
+    <li><a href="/cicd-pipelines">CI/CD Pipelines</a></li>
+    <li><a href="/getting-started">Getting Started</a></li>
+    <li><a href="/index">Welcome to Jutellane Docs</a></li>
+    <li><a href="/tooling-setup">Tooling Setup</a></li>
+  </ul>
+</main>
+<footer class="container">
   <small>© <span id="y"></span> Jutellane — DevSecOps · Cloud · Sustainability</small>
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 <!-- Theme toggle script + minimal CSS vars -->
@@ -60,7 +56,4 @@
 </style>
 </footer>
 
-
-</body>
-</html>
 

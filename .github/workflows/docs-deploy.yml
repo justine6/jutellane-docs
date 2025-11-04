@@ -1,0 +1,67 @@
+name: Docs • Build & Deploy (Vercel CLI)
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "**/*.html"
+      - "**/*.css"
+      - "public/**"
+      - "templates/**"
+      - "_partials/**"
+      - "build-Docs.ps1"
+      - "vercel.json"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify PowerShell availability
+        run: pwsh --version
+
+      - name: Build static docs (partials → pages)
+        shell: pwsh
+        run: ./build-Docs.ps1
+
+      - name: Upload built site (artifact) for debugging (optional)
+        uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: built-site
+          path: |
+            *.html
+            public/**
+            styles.css
+            vercel.json
+            !_partials/**
+            !templates/**
+            !.git/**
+
+      - name: Setup Node (for Vercel CLI)
+        uses: actions/setup-node@v4
+        with:
+            node-version: 20
+
+      - name: Install Vercel CLI
+        run: npm i -g vercel@latest
+
+      - name: Pull Vercel project settings
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          vercel pull --yes --environment=production \
+            --token "$VERCEL_TOKEN"
+
+      - name: Deploy (prebuilt static)
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          # no build step on Vercel: we're deploying the files we just built
+          vercel deploy --prebuilt --prod --token "$VERCEL_TOKEN"
