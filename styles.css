@@ -107,3 +107,12 @@ ul { padding-left: 1.25rem; }
   .hero-cta { justify-content: center; }
 }
 /* ------------------------------------------------------------------------- */
+
+/* --- Latest updates ------------------------------------------------------- */
+.updates { background: #f8fafc; border-top: 1px solid rgba(2,6,23,.06); border-bottom: 1px solid rgba(2,6,23,.06); padding: 1.75rem 0; }
+.updates-title { margin: 0 0 .75rem 0; font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+.updates-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .4rem; }
+.updates-list a { text-decoration: none; font-weight: 600; color: #0f172a; }
+.updates-list a:hover { text-decoration: underline; }
+.updated-on { color:#475569; font-size:.9rem; margin-left:.5rem; }
+/* ------------------------------------------------------------------------- */
