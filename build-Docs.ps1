@@ -87,3 +87,6 @@ $smBody = @"
 "@
 Set-Content "sitemap.html" ($HeaderHtml + "`n" + $smBody + "`n" + $FooterHtml) -Encoding UTF8
 Write-Host "✓ Wrote sitemap.html"
+
+
+
