@@ -1,7 +1,5 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "trailingSlash": false,
 
   "builds": [
     { "src": "index.html",           "use": "@vercel/static" },
@@ -10,6 +8,13 @@
     { "src": "cicd-pipelines.html",  "use": "@vercel/static" },
     { "src": "styles.css",           "use": "@vercel/static" },
     { "src": "public/**",            "use": "@vercel/static" }
+  ],
+
+  "redirects": [
+    { "source": "/getting-started", "destination": "/getting-started.html", "permanent": false },
+    { "source": "/tooling-setup",   "destination": "/tooling-setup.html",   "permanent": false },
+    { "source": "/cicd-pipelines",  "destination": "/cicd-pipelines.html",  "permanent": false },
+    { "source": "/",                "destination": "/index.html",           "permanent": false }
   ],
 
   "headers": [
