@@ -9,62 +9,29 @@
   <link rel="stylesheet" href="/styles.css"/>
 </head>
 <body>
-  <header class="container">
-<meta name="description" content="This site documents our tooling, pipelines, and practices.">
-  <a href="/index.html" style="display:flex;gap:.5rem;align-items:center;text-decoration:none;">
-    <img class="logo" src="/public/logo.png" alt="Jutellane logo" />
-    <strong>Jutellane Docs</strong>
-  </a>
-  <nav style="float:right">
-    <a href="/index.html">Home</a>
-    <a href="/getting-started.html">Getting Started</a>
-    <a href="/tooling-setup.html">Tooling Setup</a>
-    <a href="/cicd-pipelines.html">CI/CD Pipelines</a>
-    <a href="/architecture.html">Architecture</a>
-  <button id="themeToggle" style="margin-left:1rem">🌓</button>`n</nav>
-<!-- Active link highlighter -->
-<script>
-(function () {
-  var p = location.pathname.replace(/^/?|.html$/g, "");
-  document.querySelectorAll("nav a").forEach(function(a){
-    var t = (a.getAttribute("href")||"").replace(/^/?|.html$/g, "");
-    if (t && t === p) { a.style.fontWeight="600"; a.style.textDecoration="underline"; }
-  });
-}());
-</script>
-</header>
-
-
-
-  <main class="container">
-    <h1>Welcome to Jutellane Docs</h1>
-<p>This site documents our tooling, pipelines, and practices.</p>
-<p>Jump to the <a href="/getting-started.html">Getting Started</a> guide.</p>
-
-  </main>
-  <footer class="container">
-  <small>© <span id="y"></span> Jutellane — DevSecOps · Cloud · Sustainability</small>
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
-<!-- Theme toggle script + minimal CSS vars -->
-<script>
-  var KEY = "jutellane-theme";
-  function setTheme(t){ document.documentElement.dataset.theme=t; localStorage.setItem(KEY,t); }
-  setTheme(localStorage.getItem(KEY)||"light");
-  document.getElementById("themeToggle")?.addEventListener("click", function () {
-    setTheme(document.documentElement.dataset.theme === "light" ? "dark" : "light");
-  });
-</script>
-<style>
-  :root[data-theme="dark"] { color-scheme: dark; --bg:#0b1220; --fg:#e6eefc; --link:#8ab4ff; --muted:#93a4c0; }
-  :root[data-theme="light"]{ color-scheme: light; --bg:#ffffff; --fg:#0f172a; --link:#1a56db; --muted:#475569; }
-  body{ background:var(--bg); color:var(--fg); }
-  a{ color:var(--link); }
-  small{ color:var(--muted); }
-</style>
-</footer>
-
-
+<main class="container">
+<section class="container">
+  <h1>Welcome to Jutellane Docs</h1>
+  <p>This site is the single source of truth for how we ship at Jutellane—our standards for DevSecOps, cloud reliability, and sustainable engineering. You’ll find concise, practical guidance that mirrors the way we actually work in projects.</p>
+  <h2>What you’ll find</h2>
+  <ul>
+    <li>Getting Started — how to browse, run locally, and contribute.</li>
+    <li>Tooling Setup — linters, formatters, precommit, IDE hygiene.</li>
+    <li>CI/CD Pipelines — PR previews, production static deploy, quality gates.</li>
+    <li>Architecture — high-level diagrams for services and data flows.</li>
+  </ul>
+  <h2>How to use these docs</h2>
+  <ol>
+    <li>Start with <a href="./getting-started.html">Getting Started</a> for ground rules.</li>
+    <li>Match your editor to <a href="./tooling-setup.html">Tooling Setup</a> to catch errors early.</li>
+    <li>Follow <a href="./cicd-pipelines.html">CI/CD Pipelines</a> when opening PRs or shipping to prod.</li>
+    <li>Skim <a href="./architecture.html">Architecture</a> when orienting across systems.</li>
+  </ol>
+</section>
+</main>
 </body>
 </html>
+
+
 
 
