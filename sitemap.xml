@@ -1,61 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jutellane-docs.vercel.app/_partials/footer.html</loc>
+    <loc>https://jutellane-docs.vercel.app/architecture</loc>
     <lastmod>2025-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jutellane-docs.vercel.app/templates/base.html</loc>
+    <loc>https://jutellane-docs.vercel.app/cicd-pipelines</loc>
     <lastmod>2025-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jutellane-docs.vercel.app/_partials/header.html</loc>
+    <loc>https://jutellane-docs.vercel.app/docs</loc>
     <lastmod>2025-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jutellane-docs.vercel.app/architecture.html</loc>
+    <loc>https://jutellane-docs.vercel.app/getting-started</loc>
     <lastmod>2025-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jutellane-docs.vercel.app/cicd-pipelines.html</loc>
+    <loc>https://jutellane-docs.vercel.app/</loc>
     <lastmod>2025-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jutellane-docs.vercel.app/tooling-setup.html</loc>
-    <lastmod>2025-11-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jutellane-docs.vercel.app/getting-started.html</loc>
-    <lastmod>2025-11-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jutellane-docs.vercel.app/_vercel_output_backup_20251104-083657/static/cicd-pipelines.html</loc>
-    <lastmod>2025-11-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jutellane-docs.vercel.app/_vercel_output_backup_20251104-083657/static/tooling-setup.html</loc>
-    <lastmod>2025-11-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jutellane-docs.vercel.app/_vercel_output_backup_20251104-083657/static/getting-started.html</loc>
+    <loc>https://jutellane-docs.vercel.app/tooling-setup</loc>
     <lastmod>2025-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

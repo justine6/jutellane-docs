@@ -24,7 +24,64 @@
     <p>Jump to the <a href="/getting-started.html">Getting Started</a> guide.</p>
   </main>
   <footer class="container">
+    <small>© <span id="y"></span> Jutellane — DevSecOps · Cloud · Sustainability</small><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Practical, production-ready guidance for DevSecOps, cloud reliability, and sustainable engineering." />
+  <title>Home · Jutellane Docs</title>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- Site header (matches other pages) -->
+  <header class="container" style="display:flex;align-items:center;gap:.75rem;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:.75rem;">
+      <a href="/index.html" style="display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;">
+        <img class="logo" src="/logo.png" alt="Jutellane logo" style="height:32px;width:auto;" />
+        <strong>Jutellane Docs</strong>
+      </a>
+    </div>
+    <nav style="display:flex;gap:1rem;">
+      <a href="/index.html">Home</a>
+      <a href="/getting-started.html">Getting Started</a>
+      <a href="/tooling-setup.html">Tooling Setup</a>
+      <a href="/cicd-pipelines.html">CI/CD Pipelines</a>
+      <a href="/architecture.html">Architecture</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero" style="margin:18px 0 22px 0;">
+      <h1 style="margin:.25rem 0 0 0;">Welcome to Jutellane Docs</h1>
+      <p style="margin:.5rem 0 1rem 0;">
+        This site is the single source of truth for how we ship at Jutellane—our standards for DevSecOps,
+        cloud reliability, and sustainable engineering.
+      </p>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+        <a class="btn" href="/getting-started.html">Getting Started</a>
+        <a class="btn" href="/tooling-setup.html">Tooling Setup</a>
+        <a class="btn" href="/cicd-pipelines.html">CI/CD Pipelines</a>
+        <a class="btn" href="/architecture.html">Architecture</a>
+      </div>
+    </section>
+
+    <!-- Anchor for script-injected sections -->
+    <!-- home-sections -->
+  </main>
+
+  <footer class="container" style="margin:28px 0 18px 0;">
     <small>© <span id="y"></span> Jutellane — DevSecOps · Cloud · Sustainability</small>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
   </footer>
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
