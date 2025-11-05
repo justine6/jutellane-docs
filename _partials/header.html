@@ -2,11 +2,31 @@
   <div class="container navbar">
     <a class="brand" href="/" aria-label="Jutellane Docs — Home">Jutellane Docs</a>
     <nav class="nav" aria-label="Primary">
-      <a href="/" aria-current="page">Home</a>
+      <a href="/index.html">Home</a>
       <a href="/getting-started.html">Getting started</a>
       <a href="/tooling-setup.html">Tooling setup</a>
       <a href="/cicd-pipelines.html">CI/CD pipelines</a>
       <a href="/architecture.html">Architecture</a>
     </nav>
   </div>
+
+  <script>
+    // Highlight the current page link
+    (function () {
+      var path = location.pathname.replace(/\/+$/, '') || '/';
+      var map = {
+        '/': '/index.html',
+        '/index.html': '/index.html',
+        '/getting-started.html': '/getting-started.html',
+        '/tooling-setup.html': '/tooling-setup.html',
+        '/cicd-pipelines.html': '/cicd-pipelines.html',
+        '/architecture.html': '/architecture.html'
+      };
+      var current = map[path] || path;
+      document.querySelectorAll('.nav a').forEach(function (a) {
+        var href = a.getAttribute('href');
+        if (href === current) a.setAttribute('aria-current', 'page');
+      });
+    })();
+  </script>
 </header>
