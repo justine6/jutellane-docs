@@ -9,15 +9,15 @@
       // Keep the year current even when this partial is injected dynamically
       (function () {
         try {
-          var yearSpan = document.getElementById('year');
+          const yearSpan = document.getElementById('year');
           if (yearSpan) yearSpan.textContent = String(new Date().getFullYear());
         } catch (_) {}
       })();
     </script>
 
-    <!-- Shared widgets -->
-    <script src="/assets/latest-updates.js"></script>
-    <script src="/assets/back-to-top.js"></script>
-    <script src="/assets/theme-toggle.js"></script>
+    <!-- Shared scripts -->
+    <script src="/scripts/latest-updates.js"></script>
+    <script src="/scripts/back-to-top.js"></script>
+    <script src="/scripts/theme-toggle.js"></script>
   </div>
 </footer>
