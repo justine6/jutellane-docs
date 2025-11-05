@@ -65,3 +65,18 @@ jobs:
         run: |
           # no build step on Vercel: we're deploying the files we just built
           vercel deploy --prebuilt --prod --token "$VERCEL_TOKEN"
+          name: Deploy on push (Vercel Hook)
+          on:
+            push:
+              branches: [ "main" ]
+
+          jobs:
+            deploy:
+              runs-on: ubuntu-latest
+              steps:
+                - name: Call Vercel Deploy Hook
+                  run: |
+                    curl -fsSL -X POST "$VERCEL_DEPLOY_HOOK_URL"
+                  env:
+                    VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+

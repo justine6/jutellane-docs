@@ -14,11 +14,11 @@
   function render() {
     var slot = document.getElementById('latest-updates');
     if (!slot) return;
+
     var last = new Date(document.lastModified);
-    var env =
-      /vercel\.app$/.test(location.hostname)
-        ? 'Vercel'
-        : location.hostname || 'local';
+    var env = /vercel\.app$/.test(location.hostname)
+      ? 'Vercel'
+      : (location.hostname || 'local');
 
     slot.textContent = "Last updated: " + fmt(last) + " · Environment: " + env;
   }
