@@ -1,40 +1,53 @@
-// /assets/theme-toggle.js
+// /scripts/theme-toggle.js
 (function () {
-  var KEY = "theme"; // 'light' | 'dark'
+  var KEY = "theme";
   var root = document.documentElement;
 
-  function systemPrefersDark() {
+  function prefersDark() {
     return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   }
-
+  function current() { return root.getAttribute("data-theme"); }
   function apply(theme) {
     root.setAttribute("data-theme", theme);
-    btn.textContent = theme === "dark" ? "☀️" : "🌙";
+    var b = document.getElementById("themeToggle");
+    if (b) b.textContent = theme === "dark" ? "☀️" : "🌙";
     try { localStorage.setItem(KEY, theme); } catch (_) {}
   }
-
-  function initTheme() {
-    var saved = null;
-    try { saved = localStorage.getItem(KEY); } catch (_) {}
-    if (saved === "light" || saved === "dark") return saved;
-    return systemPrefersDark() ? "dark" : "light";
+  function initial() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved === "light" || saved === "dark") return saved;
+    } catch (_) {}
+    return prefersDark() ? "dark" : "light";
   }
 
-  // Floating button
-  var btn = document.createElement("button");
-  btn.id = "themeToggle";
-  btn.setAttribute(
-    "style",
-    "position:fixed;bottom:2rem;left:2rem;width:2.5rem;height:2.5rem;border:none;border-radius:50%;font-size:1.2rem;line-height:1.2rem;cursor:pointer;background:#111;color:#fff;opacity:.9;box-shadow:0 2px 8px rgba(0,0,0,.25);z-index:999"
-  );
+  function ensureButton() {
+    var btn = document.getElementById("themeToggle");
+    if (btn) return btn;
+    var nav = document.querySelector(".nav");
+    if (!nav) return null;
 
-  document.addEventListener("DOMContentLoaded", function () {
-    document.body.appendChild(btn);
-    apply(initTheme());
-  });
+    btn = document.createElement("button");
+    btn.id = "themeToggle";
+    btn.title = "Toggle theme";
+    btn.setAttribute("style",
+      "margin-left:.25rem;background:transparent;border:none;font-size:1.1rem;cursor:pointer;color:var(--link)");
+    nav.appendChild(btn);
+    return btn;
+  }
 
-  btn.addEventListener("click", function () {
-    var next = (root.getAttribute("data-theme") === "dark") ? "light" : "dark";
-    apply(next);
-  });
+  function wire() {
+    var btn = ensureButton();
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      apply(current() === "dark" ? "light" : "dark");
+    });
+    apply(initial());
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", wire);
+  } else {
+    wire();
+  }
 })();
