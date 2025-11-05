@@ -1,3 +1,4 @@
+# robots.txt for https://jutellane-docs.vercel.app
 User-agent: *
 Allow: /
 
