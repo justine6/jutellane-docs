@@ -1,68 +1,67 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Architecture — Jutellane Docs</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <script>
-      (function(){
-        var k="jutellane-theme";
-        document.documentElement.dataset.theme = localStorage.getItem(k) || "light";
-      })();
-    </script>
-  </head>
-  <body>
-    <div id="header-include" data-include="/_partials/header.html"></div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Architecture — Jutellane Docs</title>
 
-  <h1>Architecture</h1>
-  <p>High-level view of the system.</p>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
 
-  <h2>Diagrams</h2>
-  <ul>
-    <li><a href="/diagrams/high-level.svg" target="_blank">High-level</a></li>
-    <li><a href="/diagrams/service-flow.svg" target="_blank">Service Flow</a></li>
-    <li><a href="/diagrams/data-pipeline.svg" target="_blank">Data Pipeline</a></li>
-  </ul>
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body>
+  <!-- Header (shared pattern) -->
+  <header class="site-header" role="banner">
+    <div class="container navbar">
+      <a class="brand" href="/" aria-label="Jutellane Docs — Home">
+        <img src="/favicon.ico" alt="Jutellane mark" width="28" height="28" style="vertical-align:middle;object-fit:contain;opacity:.95;">
+        <span>Jutellane Docs</span>
+      </a>
 
-  <!-- Inline preview -->
-  <p>
-    <img src="/diagrams/high-level.svg" alt="High-level architecture diagram" style="max-width:100%">
-  </p>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/getting-started.html">Getting started</a>
+        <a href="/tooling-setup.html">Tooling setup</a>
+        <a href="/cicd-pipelines.html">CI/CD pipelines</a>
+        <a href="/architecture.html" aria-current="page">Architecture</a>
+      </nav>
 
-        <img src="/diagrams/high-level.svg" alt="High-level architecture diagram" style="max-width:100%" />
-      </p>
-    </main>
+      <button id="themeToggle" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
 
-    <div id="footer-include" data-include="/_partials/footer.html"></div>
+  <main class="container">
+    <h1>Architecture</h1>
+    <p>High-level view of the system.</p>
 
-    <script>
-      (function loadPartials() {
-        function inject(target, html) {
-          target.innerHTML = html;
-          var scripts = Array.from(target.querySelectorAll('script'));
-          scripts.forEach(function (old) {
-            var s = document.createElement('script');
-            if (old.src) { s.src = old.src; } else { s.text = old.textContent || ''; }
-            old.replaceWith(s);
-          });
-        }
-        document.querySelectorAll('[data-include]').forEach(function (el) {
-          var path = el.getAttribute('data-include');
-          fetch(path).then(r => r.text()).then(html => inject(el, html));
-        });
-      })();
-    </script>
-  </body>
+    <h2>Diagrams</h2>
+    <ul>
+      <li><a href="/diagrams/high-level.svg">High-level</a></li>
+      <li><a href="/diagrams/service-flow.svg">Service Flow</a></li>
+      <li><a href="/diagrams/data-pipeline.svg">Data Pipeline</a></li>
+    </ul>
+
+    <!-- Inline previews (safe, fast) -->
+    <figure>
+      <img src="/diagrams/high-level.svg" alt="High-level architecture diagram" loading="lazy" style="max-width:100%;height:auto;">
+      <figcaption>High-level architecture diagram</figcaption>
+    </figure>
+
+    <figure>
+      <img src="/diagrams/service-flow.svg" alt="Service flow diagram" loading="lazy" style="max-width:100%;height:auto;">
+      <figcaption>Service flow diagram</figcaption>
+    </figure>
+
+    <figure>
+      <img src="/diagrams/data-pipeline.svg" alt="Data pipeline diagram" loading="lazy" style="max-width:100%;height:auto;">
+      <figcaption>Data pipeline diagram</figcaption>
+    </figure>
+  </main>
+
+  <script defer src="/assets/theme-toggle.js"></script>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

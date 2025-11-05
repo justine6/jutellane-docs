@@ -84,36 +84,83 @@ body {
   backdrop-filter: saturate(150%) blur(8px);
   border-bottom: 1px solid var(--border);
 }
+
 .navbar {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.75rem 0;
+  gap: .75rem;
+  padding: .75rem 0;
 }
+
+/* Brand */
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   font-size: 1.05rem;
   color: var(--fg);
   text-decoration: none;
 }
+.brand img {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
+/* Primary nav (left aligned) */
 .nav {
-  display: flex;
-  gap: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
   margin-left: auto;
   flex-wrap: wrap;
 }
 .nav a {
+  position: relative;
   color: var(--muted);
   text-decoration: none;
-  padding: 0.35rem 0.55rem;
-  border-radius: 0.5rem;
-  transition: background-color .2s, color .2s;
+  padding: .35rem .55rem;
+  border-radius: .5rem;
+  transition: color .25s ease;
+}
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--link);
+  transform: scaleX(0);
+  transform-origin: leftr;
+  transition: transform .25s ease;
+}
+.nav a:hover::after,
+.nav a[aria-current="page"]::after {
+  transform: scaleX(1);
 }
 .nav a:hover,
 .nav a[aria-current="page"] {
   color: var(--fg);
+}
+
+/* Theme toggle button */
+#themeToggle {
+  padding: .35rem .6rem;
+  border-radius: .6rem;
+  border: 1px solid var(--card-border);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  cursor: pointer;
+  line-height: 1;
+  margin-left: .5rem;
+  transition: background .25s ease, color .25s ease;
+}
+#themeToggle:hover {
   background: var(--surface);
+  color: var(--fg);
 }
 
 /* ===== Main =============================================================== */
@@ -172,6 +219,32 @@ a:visited { color: var(--link-visited); }
   color: var(--muted);
   background: var(--footer-bg);
   font-size: 0.95rem;
+  text-align: center;
+}
+.site-footer a {
+  position: relative;
+  color: var(--link);
+  text-decoration: none;
+  padding-bottom: 2px;
+  transition: color .25s ease;
+}
+.site-footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--link);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+.site-footer a:hover::after {
+  transform: scaleX(1);
+}
+.site-footer a:hover {
+  color: var(--fg);
 }
 .small { font-size: 0.9rem; }
 
@@ -196,40 +269,11 @@ pre {
 .mb-1 { margin-bottom: 0.25rem; }
 .mb-2 { margin-bottom: 0.5rem; }
 .center { text-align: center; }
-/* --- header polish --- */
-.brand { display:inline-flex; align-items:center; gap:.5rem; }
-.brand-logo { height: 24px; width:auto; display:block; }
 
-.nav { display:flex; align-items:center; gap:.75rem; margin-left:auto; flex-wrap:wrap; }
+/* Header layout – enforce brand left, nav+toggle right */
+.site-header .navbar { display:flex; align-items:center; gap:.75rem; }
+.site-header .nav-right { margin-left:auto; display:flex; align-items:center; gap:1rem; }
 
-.theme-btn {
-  background: transparent;
-  color: var(--link);
-  border: 1px solid transparent;
-  border-radius: .5rem;
-  padding: .3rem .5rem;
-  font-size: 1.05rem;
-  cursor: pointer;
-  line-height: 1;
-}
-.theme-btn:hover { background: var(--surface); }
-.navbar { display: flex; align-items: center; gap: 1rem; }
-.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
-.brand img { display: block; }
-
-.nav-right { margin-left: auto; display: flex; align-items: center; gap: .75rem; }
-
-/* Theme toggle button */
-#themeToggle {
-  padding: .35rem .6rem;
-  border-radius: .6rem;
-  border: 1px solid var(--card-border);
-  background: var(--btn-bg);
-  color: var(--btn-fg);
-  cursor: pointer;
-}
-
-  
 /* === Home hero/logo + CTA (Jutellane Docs) === */
 .home-hero { display:flex; align-items:center; gap:.75rem; }
 .home-hero img { height:56px; width:auto; opacity:.95; }
@@ -248,10 +292,3 @@ pre {
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0,0,0,.12);
 }
-
-/* === Header layout === */
-.site-header .navbar{display:flex;align-items:center;gap:.75rem}
-.site-header .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none}
-.site-header .brand img{display:block}
-.site-header .nav{display:flex;gap:1rem;margin-left:auto}
-#themeToggle{margin-left:.75rem}

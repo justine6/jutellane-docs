@@ -1,88 +1,64 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jutellane Docs — Home</title>
-    <meta name="description" content="Technical documentation for Jutellane Solutions: quick starts, tooling, CI/CD, and reference architecture." />
-    <link rel="stylesheet" href="/styles.css" />
-    <meta name="theme-color" content="#2563eb" />
-  <link rel="icon" href="/favicon-20251105083421.ico" sizes="any">
-<link rel="shortcut icon" href="/favicon-20251105083421.ico">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jutellane Docs</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
 </head>
-  <body>
-    <!-- Header partial mount -->
-    <div id="header-include" data-include="/_partials/header.html"></div>
+<body>
+  <!-- Header (shared pattern) -->
+  <header class="site-header" role="banner">
+    <div class="container navbar">
+      <a class="brand" href="/" aria-label="Jutellane Docs — Home">
+        <img src="/favicon.ico" alt="Jutellane mark" width="28" height="28" style="vertical-align:middle;object-fit:contain;opacity:.95;">
+        <span>Jutellane Docs</span>
+      </a>
 
-    <main class="container" id="main-content">
-      <!-- Brand hero: big logo + All docs -->
-      <section class="home-hero" aria-label="Brand hero" style="display:flex;align-items:center;gap:1rem;margin:.5rem 0 1rem;">
-        <img src="/logo.png" alt="Jutellane logo" style="height:64px;width:auto;opacity:.95" />
-        <a href="/sitemap.xml" class="btn ghost" style="text-decoration:none">All docs →</a>
-      </section>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/getting-started.html">Getting started</a>
+        <a href="/tooling-setup.html">Tooling setup</a>
+        <a href="/cicd-pipelines.html">CI/CD pipelines</a>
+        <a href="/architecture.html">Architecture</a>
+      </nav>
 
-      <h1 class="mt-0">Jutellane Docs</h1>
-      <p class="lead">
-        Concise, production-ready documentation for Jutellane Solutions:
-        start quickly, standardize tooling, ship with robust CI/CD,
-        and understand the reference architecture behind the stack.
-      </p>
+      <button id="themeToggle" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
 
-      <div class="grid cols-2 mt-3">
-        <section class="card">
-          <h2 class="mt-0">What’s inside</h2>
-          <ul class="mt-2">
-            <li>Getting started — local environment and first run</li>
-            <li>Tooling setup — formatting, linting, and quality gates</li>
-            <li>CI/CD pipelines — preview, main, and production flows</li>
-            <li>Architecture — high-level diagram and key decisions</li>
-          </ul>
-          <p class="mt-2">
-            Each section is designed to be readable in under five minutes,
-            with exact commands and copy-paste blocks.
-          </p>
-        </section>
+  <main class="container">
+    <h1>Jutellane Docs</h1>
+    <p>
+      Concise, production-ready documentation for Jutellane Solutions:
+      start quickly, standardize tooling, ship with robust CI/CD, and
+      understand the reference architecture behind the stack.
+    </p>
 
-        <section class="card">
-          <h2 class="mt-0">Next steps</h2>
-          <ol class="mt-2">
-            <li><a href="/getting-started.html">Getting started</a></li>
-            <li><a href="/tooling-setup.html">Tooling setup</a></li>
-            <li><a href="/cicd-pipelines.html">CI/CD pipelines</a></li>
-            <li><a href="/architecture.html">Architecture</a></li>
-          </ol>
-        </section>
-      </div>
-    </main>
+    <h2>What’s inside</h2>
+    <ul>
+      <li>Getting started — local environment and first run</li>
+      <li>Tooling setup — formatting, linting, and quality gates</li>
+      <li>CI/CD pipelines — preview, main, and production flows</li>
+      <li>Architecture — high-level diagram and key decisions</li>
+    </ul>
 
-    <!-- Footer partial mount -->
-    <div id="footer-include" data-include="/_partials/footer.html"></div>
+    <h2>Next steps</h2>
+    <ol>
+      <li><a href="/getting-started.html">Getting started</a></li>
+      <li><a href="/tooling-setup.html">Tooling setup</a></li>
+      <li><a href="/cicd-pipelines.html">CI/CD pipelines</a></li>
+      <li><a href="/architecture.html">Architecture</a></li>
+    </ol>
+  </main>
 
-    <!-- Tiny include loader for header/footer partials -->
-    <script>
-      (function () {
-        document.querySelectorAll("[data-include]").forEach(function (slot) {
-          var url = slot.getAttribute("data-include");
-          if (!url) return;
-          fetch(url, { cache: "no-cache" })
-            .then(function (r) { return r.text(); })
-            .then(function (html) { slot.outerHTML = html; })
-            .catch(function () { /* ignore */ });
-        });
-      })();
-    </script>
-  </body>
+  <script defer src="/assets/theme-toggle.js"></script>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
