@@ -274,32 +274,35 @@ pre {
 .site-header .navbar { display:flex; align-items:center; gap:.75rem; }
 .site-header .nav-right { margin-left:auto; display:flex; align-items:center; gap:1rem; }
 
-/* === Home hero/logo + CTA (Jutellane Docs) === */
-.home-hero { display:flex; align-items:center; gap:.75rem; }
-.home-hero img { height:56px; width:auto; opacity:.95; }
-.home-hero .btn {
-  background: var(--accent);
-  color: #fff;
-  padding: .6rem 1.2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform .15s ease, box-shadow .15s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,.1);
-}
-.home-hero .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,.12);
-}
-.navbar {
+/* === Hero (centered, PNG) =============================================== */
+.logo-banner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #e5e7eb;
-  background: var(--color-bg, #fff);
+  text-align: center;
+  gap: 0.9rem;
+  padding: 2.75rem 1rem 2rem;
+  max-width: 980px;
+  margin: 0 auto;
 }
+
+.logo-banner__img {
+  width: clamp(160px, 22vw, 256px);
+  height: auto;
+  opacity: .98;
+  user-select: none;
+}
+
+.logo-banner__tagline {
+  font-size: clamp(1.25rem, 1.4vw + 1rem, 2rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  margin: 0.25rem 0 0.25rem;
+}
+
+.logo-banner__cta { margin-top: 0.35rem; }
 
 /* Left side */
 .nav-left {
