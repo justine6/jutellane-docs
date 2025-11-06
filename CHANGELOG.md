@@ -1,28 +1,63 @@
-# 📘 Jutellane Docs — Changelog
+# 🧭 Jutellane Docs — Changelog
 
-## v1.0.0-docs-stable — 2025-11-05
-
-### 🚀 Highlights
-- First **stable documentation release** with synchronized assets and responsive header layout.
-- **Architecture diagrams** fully functional: `high-level.svg`, `service-flow.svg`, and `data-pipeline.svg`.
-- **Header layout improved** — logo and site name left, navigation buttons aligned right.
-- **CSS cache-busting** active across all HTML pages (`?v=YYYY-MM-DD-HH`).
-- **Prebuilt bundle** workflow confirmed; all static assets (favicon, logo, diagrams) embedded in `.vercel/output/static/`.
-- **404 page** updated for consistency and version tracking.
-
-### 🧩 Technical Changes
-- Implemented PowerShell automation to bump cache version automatically.
-- Introduced `Sync-Static.ps1` to ensure public assets are copied before deploy.
-- Cleaned up `.vercel/output` and verified fresh builds for every release.
-- Enhanced `styles.css` for layout consistency and responsive design.
-
-### 🔧 Next Steps
-- Automate `Sync-Static.ps1` in GitHub Actions workflow.
-- Add a build number or timestamp badge in footer.
-- Start branch `v1.0.1-layout-refine` for visual polish and section styling.
+All notable changes to this project are documented here.  
+This changelog follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)  
+and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-**Release Maintainer:** Fnu Longla Justine Tekang  
-**Date:** November 5, 2025  
-**Deployment:** [jutellane-docs.vercel.app](https://jutellane-docs.vercel.app)
+## [v1.0-docs-reference] – 2025-11-05
+### 🎯 Reference Build (Stable)
+This is the **first official reference build** of **Jutellane Docs**, marking the completion of the full documentation experience — stable, centered, and brand-aligned.
+
+#### ✨ Highlights
+- **Hero section fully centered** — clean and minimal presentation.
+- **Brand logo restored and optimized** (`/logo.png`) for clarity and transparency.
+- **“Get All Docs” CTA button** enhanced with the Jutellane **blue → teal gradient**.
+- **Tagline** — *Cloud Confidence. Delivered.* — repositioned for better visual balance.
+- **Footer** integrated cleanly with foundation and project links.
+- **All architecture diagrams** now render correctly:
+  - `/diagrams/high-level.svg`
+  - `/diagrams/service-flow.svg`
+  - `/diagrams/data-pipeline.svg`
+- **Favicon** updated and recolored to match the gradient palette (`#0ea5e9` blue).
+- **Page alignment refinements** for consistent white-space and visual hierarchy.
+
+#### 🧩 Infrastructure & Build
+- Verified asset loading paths after static migration (`/logo.png`, `/diagrams/*.svg`).
+- Confirmed Vercel static deployment structure (root-served assets).
+- Added `v1.0-docs-reference` Git tag for permanent reference snapshot.
+- Repository structure simplified for clarity and maintainability.
+
+#### 🎨 Brand Consistency
+- Harmonized gradient between CTA and favicon.
+- Typography aligned with Jutellane’s identity: modern, readable, confident.
+- Layout spacing adjusted for symmetrical hero and section flow.
+
+#### 🧠 Lessons Learned
+- Static hosting via Vercel requires root-level asset placement (not `public/`).
+- Inline HTML comments inside `<img>` tags break rendering — fixed.
+- Case sensitivity matters in SVG paths and filenames on Vercel (Linux environment).
+- Incremental commits and visual checkpoints speed up debugging and styling.
+
+---
+
+## [Unreleased]
+### 🚧 Planned Improvements
+- Add **search functionality** for quick doc access.
+- Introduce **dark mode** favicon variant.
+- Add **meta tags** for OpenGraph and social previews.
+- Automate **build-sitemap.ps1** into CI for each release.
+
+---
+
+### 🧾 Version Summary
+| Version | Date | Type | Description |
+|----------|------|------|-------------|
+| v1.0-docs-reference | 2025-11-05 | 🎯 Reference | Centered hero, gradient CTA, favicon update, verified diagrams |
+
+---
+
+**Maintainer:** Fnu Longla Justine Tekang  
+**Brand Motto:** *Cloud Confidence. Delivered.*  
+**Powered by:** Jutellane Solutions × Vercel
