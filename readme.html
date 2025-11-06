@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Jutellane Docs — README</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* optional — improves markdown readability */
+    .markdown-body h1, .markdown-body h2, .markdown-body h3 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .markdown-body img {
+      max-width: 220px;
+      margin: 1rem 0;
+      display: block;
+    }
+    .markdown-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    .markdown-body table th,
+    .markdown-body table td {
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+    }
+    .markdown-body code {
+      background: #f3f3f3;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .markdown-body pre code {
+      display: block;
+      background: #f3f3f3;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ Your existing header/nav goes here -->
+  <!-- Copy your <header> from index.html -->
+
+  <main class="container">
+    <article class="markdown-body">
+
+      <h1>Jutellane Docs</h1>
+
+      <img src="public/logo.png" alt="Jutellane Logo" />
+
+      <h2><strong>Cloud Confidence. Delivered.</strong></h2>
+      <p>Production-ready documentation for <strong>Jutellane Solutions</strong>, built with clarity, precision, and engineering excellence.</p>
+
+      <hr />
+
+      <h1>🚀 About This Documentation</h1>
+      <p>This site is the official technical documentation hub for <strong>Jutellane Solutions</strong>.<br/>
+      It captures the architecture, tooling, CI/CD pipelines, diagrams, standards, production flow, and release automation powering the platform.</p>
+
+      <p>The documentation is designed to be:</p>
+      <ul>
+        <li>✅ <strong>Fast</strong> — static HTML served on Vercel</li>
+        <li>✅ <strong>Simple</strong> — no frameworks, fully portable</li>
+        <li>✅ <strong>Robust</strong> — includes diagrams, scripts, tooling guides</li>
+        <li>✅ <strong>Automated</strong> — powered by <code>Tag-Release.ps1</code> and versioned releases</li>
+        <li>✅ <strong>Professional</strong> — aligned with Justine Longla T.’s engineering brand</li>
+      </ul>
+
+      <hr />
+
+      <h1>🟦 Brand Identity</h1>
+
+      <h3><strong>Logo</strong></h3>
+      <pre><code>public/logo.png</code></pre>
+
+      <h3><strong>Color Palette</strong></h3>
+      <table>
+        <tr><th>Purpose</th><th>Color</th></tr>
+        <tr><td>Primary Brand Blue</td><td><code>#1E40AF</code></td></tr>
+        <tr><td>Teal Gradient End</td><td><code>#14B8A6</code></td></tr>
+        <tr><td>CTA Gradient</td><td>Blue → Teal</td></tr>
+      </table>
+
+      <h3><strong>Tagline</strong></h3>
+      <blockquote>
+        <strong>Cloud Confidence. Delivered.</strong>
+      </blockquote>
+
+      <h3><strong>Favicon</strong></h3>
+      <pre><code>public/favicon.ico</code></pre>
+
+      <hr />
+
+      <h1>📂 Project Structure</h1>
+
+<pre><code>jutellane-docs/
+│
+├── public/
+│   ├── logo.png
+│   ├── favicon.ico
+│   ├── diagrams/
+│   │   ├── high-level.svg
+│   │   ├── service-flow.svg
+│   │   └── data-pipeline.svg
+│
+├── index.html
+├── docs.html
+├── architecture.html
+├── ci-cd-pipelines.html
+├── tooling-setup.html
+├── getting-started.html
+│
+├── styles.css
+├── sitemap.xml
+├── robots.txt
+│
+├── Tag-Release.ps1
+├── Tag-Release.ps1 (v2)
+└── CHANGELOG.md
+</code></pre>
+
+      <hr />
+
+      <h1>✔️ Key Features</h1>
+      <ul>
+        <li><strong>✅ Centered Hero Section</strong><br/>Updated layout, proper spacing, enhanced visibility.</li>
+        <li><strong>✅ Gradient CTA button</strong><br/><code>background: linear-gradient(90deg, #1E40AF, #14B8A6);</code></li>
+        <li><strong>✅ Favicon Fully Fixed</strong></li>
+        <li><strong>✅ Full diagram support</strong></li>
+      </ul>
+
+      <hr />
+
+      <h1>🔧 Development</h1>
+
+      <h3>Run locally:</h3>
+<pre><code># open index.html in your browser
+</code></pre>
+
+      <h3>Update diagrams:</h3>
+<pre><code>public/diagrams/*.svg
+</code></pre>
+
+      <h3>Update hero logo:</h3>
+<pre><code>public/logo.png
+</code></pre>
+
+      <h3>Adjust styling:</h3>
+<pre><code>styles.css
+</code></pre>
+
+      <hr />
+
+      <h1>🚀 Deployment (Vercel)</h1>
+      <p>Deploys automatically when pushing to <code>main</code>.</p>
+
+      <ul>
+        <li>✅ Preview URLs per commit</li>
+        <li>✅ Production: <code>https://jutellane-docs.vercel.app</code></li>
+      </ul>
+
+      <hr />
+
+      <h1>🏷️ Release Automation</h1>
+
+<pre><code>pwsh ./Tag-Release.ps1 -Version "&lt;tag&gt;" -Message "&lt;notes&gt;"
+</code></pre>
+
+      <p><strong>The script performs:</strong></p>
+      <ul>
+        <li>Ensures working tree is clean</li>
+        <li>Increments version</li>
+        <li>Generates annotated tag</li>
+        <li>Pushes tags + main branch</li>
+        <li>Updates CHANGELOG.md</li>
+      </ul>
+
+<pre><code>✔ Release v1.0-docs-reference successfully tagged and pushed 🚀
+</code></pre>
+
+      <hr />
+
+      <h1>📈 Roadmap</h1>
+
+      <h3>✅ Completed</h3>
+      <ul>
+        <li>Centered hero</li>
+        <li>CTA gradient</li>
+        <li>Favicon fix</li>
+        <li>Diagram improvements</li>
+        <li>Release automation v2</li>
+      </ul>
+
+      <h3>🟦 Coming Enhancements</h3>
+      <ul>
+        <li>Dark mode polish</li>
+        <li>CLI utilities</li>
+        <li>Architecture deep dives</li>
+        <li>Multi-language support</li>
+      </ul>
+
+      <hr />
+
+      <h1>✅ Author</h1>
+      <p><strong>FNU Longla Justine Tekang</strong><br/>
+      DevSecOps • Cloud • Sustainability<br/>
+      Founder — <strong>Jutellane Solutions</strong></p>
+
+      <hr />
+
+      <h1>📜 License</h1>
+      <p>MIT License</p>
+
+    </article>
+  </main>
+
+  <!-- ✅ Your existing footer goes here -->
+
+</body>
+</html>
