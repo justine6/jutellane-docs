@@ -1,16 +1,21 @@
-/* Jutellane Docs — minimal base styles (no frameworks) */
+/* ──────────────────────────────────────────────────────────────────────────
+   Jutellane Docs — Clean Base Styles (no frameworks)
+   - Light theme defaults + dark overrides
+   - Header/nav, hero, dual CTAs, footer
+   - Accessible focus rings, reduced motion guards
+   ────────────────────────────────────────────────────────────────────────── */
 
-/* ===== CSS Variables (Light by default) =================================== */
+/* ========== CSS Variables (Light) ======================================= */
 :root {
-  /* base */
+  /* base text + bg */
   --bg: #ffffff;
   --fg: #0f172a;           /* slate-900 */
   --muted: #475569;        /* slate-600 */
 
-  /* links & accents */
+  /* brand/link colors */
   --link: #2563eb;         /* blue-600 */
   --link-visited: #7c3aed; /* violet-600 */
-  --accent: #2563eb;
+  --accent: #2563eb;       /* blue-600 */
   --accent-ink: #ffffff;
 
   /* surfaces & borders */
@@ -28,9 +33,12 @@
   /* code */
   --code-bg: #0b1020;
   --code-fg: #e6edf3;
+
+  /* focus ring */
+  --focus: color-mix(in srgb, var(--link) 65%, transparent);
 }
 
-/* Dark theme overrides */
+/* ========== Dark Theme Overrides ======================================= */
 html[data-theme="dark"] {
   --bg: #0b1220;
   --fg: #e5e7eb;
@@ -55,13 +63,15 @@ html[data-theme="dark"] {
   --code-fg: #e5e7eb;
 }
 
-/* ===== Base =============================================================== */
+/* ================= Base Reset / Typography ============================= */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif;
   color: var(--fg);
   background: var(--bg);
   line-height: 1.6;
@@ -75,7 +85,26 @@ body {
   margin: 0 auto;
 }
 
-/* ===== Header / Nav ======================================================= */
+h1, h2, h3 { line-height: 1.25; margin: 1.25rem 0 0.5rem; }
+h1 { font-size: clamp(1.75rem, 2.4vw + 1rem, 2.25rem); }
+h2 { font-size: clamp(1.25rem, 1.2vw + 1rem, 1.5rem); }
+h3 { font-size: 1.125rem; }
+p.lead {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+  max-width: 72ch;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:visited { color: var(--link-visited); }
+a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ================= Header / Navigation ================================ */
 .site-header {
   position: sticky;
   top: 0;
@@ -92,7 +121,6 @@ body {
   padding: .75rem 0;
 }
 
-/* Brand */
 .brand {
   display: inline-flex;
   align-items: center;
@@ -101,52 +129,45 @@ body {
   letter-spacing: -0.01em;
   font-size: 1.05rem;
   color: var(--fg);
-  text-decoration: none;
 }
 .brand img {
   display: block;
   width: 28px;
   height: 28px;
+  object-fit: contain;
+  opacity: .95;
 }
 
-/* Primary nav (left aligned) */
-.nav {
+.nav-right {
+  margin-left: auto;
   display: inline-flex;
   align-items: center;
-  gap: 1.25rem;
-  margin-left: auto;
+  gap: 1rem;
   flex-wrap: wrap;
 }
-.nav a {
+.nav-right a {
   position: relative;
   color: var(--muted);
-  text-decoration: none;
   padding: .35rem .55rem;
   border-radius: .5rem;
   transition: color .25s ease;
 }
-.nav a::after {
+.nav-right a::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
+  left: 0; bottom: 0;
+  width: 100%; height: 2px;
   background: var(--link);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform .25s ease;
 }
-.nav a:hover::after,
-.nav a[aria-current="page"]::after {
-  transform: scaleX(1);
-}
-.nav a:hover,
-.nav a[aria-current="page"] {
-  color: var(--fg);
-}
+.nav-right a:hover::after,
+.nav-right a[aria-current="page"]::after { transform: scaleX(1); }
+.nav-right a:hover,
+.nav-right a[aria-current="page"]       { color: var(--fg); }
 
-/* Theme toggle button */
+/* Theme toggle (single button; avoid duplicates in HTML) */
 #themeToggle {
   padding: .35rem .6rem;
   border-radius: .6rem;
@@ -155,126 +176,11 @@ body {
   color: var(--btn-fg);
   cursor: pointer;
   line-height: 1;
-  margin-left: .5rem;
   transition: background .25s ease, color .25s ease;
 }
-#themeToggle:hover {
-  background: var(--surface);
-  color: var(--fg);
-}
+#themeToggle:hover { background: var(--surface); color: var(--fg); }
 
-/* ===== Main =============================================================== */
-main { padding: 2.25rem 0 3rem; }
-h1, h2, h3 { line-height: 1.25; margin: 1.25rem 0 0.5rem; }
-h1 { font-size: clamp(1.75rem, 2.4vw + 1rem, 2.25rem); }
-h2 { font-size: clamp(1.25rem, 1.2vw + 1rem, 1.5rem); }
-h3 { font-size: 1.125rem; }
-
-.lead {
-  color: var(--muted);
-  font-size: 1.05rem;
-  margin-top: 0.5rem;
-  max-width: 72ch;
-}
-
-.card {
-  border: 1px solid var(--card-border);
-  background: var(--card-bg);
-  border-radius: 0.75rem;
-  padding: 1rem;
-}
-
-.grid { display: grid; gap: 0.75rem; }
-.grid.cols-2 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-@media (min-width: 768px) {
-  .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-/* ===== Buttons / Links ==================================================== */
-a { color: var(--link); }
-a:visited { color: var(--link-visited); }
-
-.btn {
-  display: inline-block;
-  background: var(--btn-bg);
-  color: var(--btn-fg);
-  padding: 0.55rem 0.8rem;
-  border-radius: 0.6rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform .06s ease;
-  border: 1px solid transparent;
-}
-.btn:hover { transform: translateY(-1px); }
-.btn.ghost {
-  background: transparent;
-  color: var(--link);
-  border-color: var(--card-border);
-}
-
-/* ===== Footer ============================================================= */
-.site-footer {
-  border-top: 1px solid var(--border);
-  padding: 1.25rem 0 2rem;
-  color: var(--muted);
-  background: var(--footer-bg);
-  font-size: 0.95rem;
-  text-align: center;
-}
-.site-footer a {
-  position: relative;
-  color: var(--link);
-  text-decoration: none;
-  padding-bottom: 2px;
-  transition: color .25s ease;
-}
-.site-footer a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1.5px;
-  background: var(--link);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .25s ease;
-}
-.site-footer a:hover::after {
-  transform: scaleX(1);
-}
-.site-footer a:hover {
-  color: var(--fg);
-}
-.small { font-size: 0.9rem; }
-
-/* ===== Code blocks ======================================================== */
-pre, code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
-pre {
-  background: var(--code-bg);
-  color: var(--code-fg);
-  padding: 1rem;
-  border-radius: 0.6rem;
-  overflow-x: auto;
-  border: 1px solid var(--card-border);
-}
-
-/* ===== Utilities ========================================================== */
-.mt-0 { margin-top: 0; }
-.mt-1 { margin-top: 0.25rem; }
-.mt-2 { margin-top: 0.5rem; }
-.mt-3 { margin-top: 0.75rem; }
-.mt-4 { margin-top: 1rem; }
-.mb-0 { margin-bottom: 0; }
-.mb-1 { margin-bottom: 0.25rem; }
-.mb-2 { margin-bottom: 0.5rem; }
-.center { text-align: center; }
-
-/* Header layout – enforce brand left, nav+toggle right */
-.site-header .navbar { display:flex; align-items:center; gap:.75rem; }
-.site-header .nav-right { margin-left:auto; display:flex; align-items:center; gap:1rem; }
-
-/* === Hero (centered, PNG) =============================================== */
+/* ================= Hero / Logo Banner ================================= */
 .logo-banner {
   display: flex;
   flex-direction: column;
@@ -285,14 +191,13 @@ pre {
   max-width: 980px;
   margin: 0 auto;
 }
-
 .logo-banner__img {
   width: clamp(160px, 22vw, 256px);
   height: auto;
   opacity: .98;
   user-select: none;
+  animation: fadeUp .5s ease-out .05s both;
 }
-
 .logo-banner__tagline {
   font-size: clamp(1.25rem, 1.4vw + 1rem, 2rem);
   line-height: 1.2;
@@ -300,60 +205,153 @@ pre {
   letter-spacing: -0.01em;
   color: var(--fg);
   margin: 0.25rem 0 0.25rem;
+  animation: fadeUp .6s ease-out .15s both;
 }
 
-.logo-banner__cta { margin-top: 0.35rem; }
-
-/* Left side */
-.nav-left {
+/* CTA row (Get All Docs + README) */
+.cta-row {
   display: flex;
+  gap: 0.75rem;
+  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  animation: fadeUp .6s ease-out .25s both;
 }
 
-.logo {
-  width: 28px;
-  height: 28px;
-}
-
-.brand-name {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #4b0082;
-}
-
-/* Right side navigation */
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.nav-right a {
-  color: #2563eb;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-right a:hover {
-  text-decoration: underline;
-}
-/* Theme toggle button */
-
-.btn-readme {
+/* Buttons */
+.btn {
   display: inline-block;
-  padding: 12px 28px;
-  background: linear-gradient(90deg, #0057ff, #00c6a7);
-  color: white;
-  font-size: 1.05rem;
-  font-weight: 600;
-  border-radius: 8px;
+  padding: 0.55rem 0.8rem;
+  border-radius: 0.6rem;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: transform .12s ease, box-shadow .12s ease, background .2s ease, color .2s ease;
 }
 
-.btn-readme:hover {
+/* Gradient primary */
+.btn-gradient {
+  color: #fff;
+  background-image: linear-gradient(90deg, #2563eb 0%, #06b6d4 55%, #14b8a6 100%);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+}
+.btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 10px 18px rgba(0,0,0,.14); }
+.btn-gradient:active { transform: translateY(0); }
+
+/* Outline secondary (README) */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1.1rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1.02rem;
+  background: transparent;
+  color: var(--link);
+  border: 2px solid var(--link);
+}
+.btn-outline:hover {
+  background: var(--link);
+  color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 18px rgba(0,0,0,.14);
+}
+html[data-theme="dark"] .btn-outline {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+html[data-theme="dark"] .btn-outline:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* README icon alignment */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: .35rem;
+  line-height: 0;
+  transform: translateY(1px);
+}
+.btn-icon svg { fill: currentColor; opacity: .9; }
+
+/* ================= Footer ============================================== */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 0 2rem;
+  color: var(--muted);
+  background: var(--footer-bg);
+  font-size: 0.95rem;
+}
+.footer-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+.footer-brand strong { color: var(--fg); }
+.muted { color: var(--muted); }
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1rem;
+}
+.site-footer a {
+  position: relative;
+  color: var(--link);
+  padding-bottom: 2px;
+}
+.site-footer a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 1.5px;
+  background: var(--link);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+.site-footer a:hover::after { transform: scaleX(1); }
+.site-footer a:hover { color: var(--fg); }
+
+@media (min-width: 780px) {
+  .footer-grid { grid-template-columns: 1.1fr 1fr 1fr; }
+}
+
+/* ================= Code Blocks ========================================= */
+pre, code {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+pre {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 1rem;
+  border-radius: 0.6rem;
+  overflow-x: auto;
+  border: 1px solid var(--card-border);
+}
+
+/* ================= Utilities =========================================== */
+.center { text-align: center; }
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: .25rem; }
+.mt-2 { margin-top: .5rem; }
+.mt-3 { margin-top: .75rem; }
+.mt-4 { margin-top: 1rem; }
+.mb-0 { margin-bottom: 0; }
+
+/* ================= Motion / Animation ================================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
 }
