@@ -339,3 +339,21 @@ pre {
   text-decoration: underline;
 }
 /* Theme toggle button */
+
+.btn-readme {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #0057ff, #00c6a7);
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-readme:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
