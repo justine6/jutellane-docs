@@ -210,7 +210,7 @@ Founder — **Jutellane Solutions**
 ---
 
 # 📜 License
-MIT License (You may replace with proprietary license if needed.)
+MIT License ( replace with proprietary license if needed.)
 
 ---
 
