@@ -1,5 +1,5 @@
 /* ──────────────────────────────────────────────────────────────────────────
-   Jutellane Docs — Clean Base Styles (no frameworks)
+   JustineLonglaT-Lane Docs — Clean Base Styles (no frameworks)
    - Light theme defaults + dark overrides
    - Header/nav, hero, dual CTAs, footer
    - Accessible focus rings, reduced motion guards
@@ -355,3 +355,4 @@ pre {
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+

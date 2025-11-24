@@ -3,10 +3,10 @@
   Generate sitemap.xml and robots.txt for a static site.
 
 .PARAMETER BaseUrl
-  The canonical site origin, e.g. https://jutellane-docs.vercel.app or https://docs.jutellane.com
+  The canonical site origin, e.g. https://justinelonglat-lane-docs.vercel.app or https://docs.justinelonglat-lane.com
 
 .EXAMPLE
-  pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\Generate-Sitemap.ps1 -BaseUrl "https://jutellane-docs.vercel.app"
+  pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\Generate-Sitemap.ps1 -BaseUrl "https://justinelonglat-lane-docs.vercel.app"
 #>
 
 [CmdletBinding()]
@@ -148,7 +148,7 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ## [v1.0.0] — 2025-11-05
 ### Added
-# - Deployed on [Vercel](https://jutellane-docs-30wyt8xu8-jutellane.vercel.app)
+# - Deployed on [Vercel](https://justinelonglat-lane-docs-30wyt8xu8-jutellane.vercel.app)
 # - Pages: Home, Getting Started, Tooling Setup, CI/CD Pipelines, Architecture
 
 ### Improved
@@ -171,4 +171,5 @@ This project follows [Semantic Versioning](https://semver.org/).
 # - Add build badge and version info footer
 # - Add downloadable PDF of docs
 # - Add open-graph meta tags and sitemap automation
+
 

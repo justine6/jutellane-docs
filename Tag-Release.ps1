@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  Automates commit + tag + push workflow for Jutellane Docs releases.
+  Automates commit + tag + push workflow for JustineLonglaT-Lane Docs releases.
 
 .DESCRIPTION
   This script simplifies version management for your docs site:
@@ -50,3 +50,4 @@ git push origin main
 git push origin $Version
 
 Good "Release $Version successfully tagged and pushed 🚀"
+

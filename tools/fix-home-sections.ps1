@@ -105,8 +105,8 @@ if ([regex]::IsMatch($homeHtml, '(?is)(<div[^>]+class="hero[^"]*"[^>]*>.*?</div>
   $homeHtml = [regex]::Replace($homeHtml, '(?is)(<div[^>]+class="hero[^"]*"[^>]*>.*?</div>)',
     { param($m) $m.Groups[1].Value + "`r`n$combined" }, 1)
 }
-elseif ([regex]::IsMatch($homeHtml, '(?is)<h1[^>]*>\s*Welcome to Jutellane Docs')) {
-  $homeHtml = [regex]::Replace($homeHtml, '(?is)(<h1[^>]*>\s*Welcome to Jutellane Docs)',
+elseif ([regex]::IsMatch($homeHtml, '(?is)<h1[^>]*>\s*Welcome to JustineLonglaT-Lane Docs')) {
+  $homeHtml = [regex]::Replace($homeHtml, '(?is)(<h1[^>]*>\s*Welcome to JustineLonglaT-Lane Docs)',
     "<!-- home-sections -->`r`n$combined`r`n$1", 1)
 }
 elseif ([regex]::IsMatch($homeHtml, '(?is)(<main[^>]*>)')) {
@@ -119,3 +119,4 @@ else {
 
 Write-Text $homePath $homeHtml
 Write-Host "✓ Homepage patched: SINGLE updates + SINGLE all-pages section." -ForegroundColor Green
+

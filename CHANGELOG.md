@@ -1,4 +1,4 @@
-# 🧭 Jutellane Docs — Changelog
+# 🧭 JustineLonglaT-Lane Docs — Changelog
 
 All notable changes to this project are documented here.  
 This changelog follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)  
@@ -8,12 +8,12 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [v1.0-docs-reference] – 2025-11-05
 ### 🎯 Reference Build (Stable)
-This is the **first official reference build** of **Jutellane Docs**, marking the completion of the full documentation experience — stable, centered, and brand-aligned.
+This is the **first official reference build** of **JustineLonglaT-Lane Docs**, marking the completion of the full documentation experience — stable, centered, and brand-aligned.
 
 #### ✨ Highlights
 - **Hero section fully centered** — clean and minimal presentation.
 - **Brand logo restored and optimized** (`/logo.png`) for clarity and transparency.
-- **“Get All Docs” CTA button** enhanced with the Jutellane **blue → teal gradient**.
+- **“Get All Docs” CTA button** enhanced with the JustineLonglaT-Lane **blue → teal gradient**.
 - **Tagline** — *Cloud Confidence. Delivered.* — repositioned for better visual balance.
 - **Footer** integrated cleanly with foundation and project links.
 - **All architecture diagrams** now render correctly:
@@ -31,7 +31,7 @@ This is the **first official reference build** of **Jutellane Docs**, marking th
 
 #### 🎨 Brand Consistency
 - Harmonized gradient between CTA and favicon.
-- Typography aligned with Jutellane’s identity: modern, readable, confident.
+- Typography aligned with JustineLonglaT-Lane’s identity: modern, readable, confident.
 - Layout spacing adjusted for symmetrical hero and section flow.
 
 #### 🧠 Lessons Learned
@@ -60,4 +60,5 @@ This is the **first official reference build** of **Jutellane Docs**, marking th
 
 **Maintainer:** Fnu Longla Justine Tekang  
 **Brand Motto:** *Cloud Confidence. Delivered.*  
-**Powered by:** Jutellane Solutions × Vercel
+**Powered by:** JustineLonglaT-Lane Consulting × Vercel
+

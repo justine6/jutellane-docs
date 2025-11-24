@@ -7,9 +7,10 @@
   const messages = [
     "Last verified on " + new Date().toLocaleDateString(),
     "Docs refreshed weekly — see GitHub for latest commits.",
-    "Built with ❤️ by Jutellane Solutions.",
+    "Built with ❤️ by JustineLonglaT-Lane Consulting.",
   ];
 
   const msg = messages[Math.floor(Math.random() * messages.length)];
   el.textContent = msg;
 })();
+

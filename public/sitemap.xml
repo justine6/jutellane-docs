@@ -3,7 +3,7 @@
 
   <!-- Home -->
   <url>
-    <loc>https://docs.jutellane.com/</loc>
+    <loc>https://docs.justinelonglat-lane.com/</loc>
     <lastmod>2025-11-05T02:59:30Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -11,35 +11,35 @@
 
   <!-- Core docs pages -->
   <url>
-    <loc>https://docs.jutellane.com/readme.html</loc>
+    <loc>https://docs.justinelonglat-lane.com/readme.html</loc>
     <lastmod>2025-11-05T02:59:30Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://docs.jutellane.com/getting-started.html</loc>
+    <loc>https://docs.justinelonglat-lane.com/getting-started.html</loc>
     <lastmod>2025-11-05T02:59:30Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://docs.jutellane.com/tooling-setup.html</loc>
+    <loc>https://docs.justinelonglat-lane.com/tooling-setup.html</loc>
     <lastmod>2025-11-05T02:59:30Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://docs.jutellane.com/cicd-pipelines.html</loc>
+    <loc>https://docs.justinelonglat-lane.com/cicd-pipelines.html</loc>
     <lastmod>2025-11-05T02:59:30Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://docs.jutellane.com/architecture.html</loc>
+    <loc>https://docs.justinelonglat-lane.com/architecture.html</loc>
     <lastmod>2025-11-05T02:59:30Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -47,31 +47,32 @@
 
   <!-- Diagrams -->
   <url>
-    <loc>https://docs.jutellane.com/diagrams/data-pipeline.svg</loc>
+    <loc>https://docs.justinelonglat-lane.com/diagrams/data-pipeline.svg</loc>
     <lastmod>2025-11-05T02:59:30Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://docs.jutellane.com/diagrams/high-level.svg</loc>
+    <loc>https://docs.justinelonglat-lane.com/diagrams/high-level.svg</loc>
     <lastmod>2025-11-05T02:59:30Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://docs.jutellane.com/diagrams/service-flow.svg</loc>
+    <loc>https://docs.justinelonglat-lane.com/diagrams/service-flow.svg</loc>
     <lastmod>2025-11-05T02:59:30Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://docs.jutellane.com/toolkit.html</loc>
+    <loc>https://docs.justinelonglat-lane.com/toolkit.html</loc>
     <lastmod>2025-11-15T02:59:30Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
 </urlset>
+

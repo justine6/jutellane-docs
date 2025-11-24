@@ -1,15 +1,15 @@
-# Jutellane Docs
+# JustineLonglaT-Lane Docs
 
-![Jutellane Logo](public/logo.png)
+![JustineLonglaT-Lane Logo](public/logo.png)
 
 ## **Cloud Confidence. Delivered.**
-Production‑ready documentation for **Jutellane Solutions**, built with clarity, precision, and engineering excellence.
+Production‑ready documentation for **JustineLonglaT-Lane Consulting**, built with clarity, precision, and engineering excellence.
 
 ---
 
 # 🚀 About This Documentation
 
-This site is the official technical documentation hub for **Jutellane Solutions**.  
+This site is the official technical documentation hub for **JustineLonglaT-Lane Consulting**.  
 It captures the architecture, tooling, CI/CD pipelines, diagrams, standards, production flow, and release automation powering the platform.
 
 The documentation is designed to be:
@@ -51,7 +51,7 @@ public/favicon.ico
 # 📂 Project Structure
 
 ```
-jutellane-docs/
+justinelonglat-lane-docs/
 │
 ├── public/
 │   ├── logo.png
@@ -140,7 +140,7 @@ The project deploys automatically on push to `main`.
 
 Deployment URL:
 - ✅ Preview URLs per commit  
-- ✅ Production: `https://jutellane-docs.vercel.app`  
+- ✅ Production: `https://justinelonglat-lane-docs.vercel.app`  
 
 No framework = instant builds.
 
@@ -205,7 +205,7 @@ Sample run:
 
 **FNU Longla Justine Tekang**  
 DevSecOps • Cloud • Sustainability  
-Founder — **Jutellane Solutions**
+Founder — **JustineLonglaT-Lane Consulting**
 
 ---
 
@@ -215,5 +215,7 @@ MIT License ( replace with proprietary license if needed.)
 ---
 
 # ⭐ Support
-If this documentation helps you, star the repo and share Jutellane Solutions!
+If this documentation helps you, star the repo and share JustineLonglaT-Lane Consulting!
+
+
 
