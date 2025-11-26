@@ -1,3 +1,107 @@
-.vercel
+# ---------------------------------------------------------
+# JustineLonglaT-Lane Docs — Git Ignore Rules
+# Clean repo, clean automation, clean deploys.
+# ---------------------------------------------------------
 
-.vercel
+# OS / Editor garbage
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Node (even if not used, prevent accidental add)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output (local preview builds)
+dist/
+build/
+tmp/
+temp/
+
+# Vercel outputs
+.vercel/
+.vercel_build_output/
+.vercel_output_backup_*/
+
+# Logs
+*.log
+logs/
+*.trace
+
+# Backup files created during edits
+*.bak
+*.bak.*
+*.backup
+*.bak.profile
+*.profile
+*.old
+*.tmp
+
+# Your old backup pages
+pages/*.bak
+pages/*bak*
+docs/*bak*
+*backup*
+
+# Your specific backups from refactors
+architecture.html.bak
+architecture.html.bak.partd
+index.html.bak
+index.html.bak.profile
+
+# Project scripts caches
+scripts/*.cache
+scripts/*.tmp
+scripts/*backup*
+
+# System & shell files
+*.swp
+*.swo
+*.swm
+*.swx
+*.orig
+
+# Images cache (if generating thumbnails someday)
+public/assets/img/thumbnails/
+
+# Python venvs (if you run scripts locally)
+venv/
+.env/
+env/
+
+# PowerShell automation artifacts
+*.ps1.temp
+*.ps1.bak
+*.ps1.log
+*.ps1.out
+
+# Local preview server artifacts
+serve.lock
+serve.pid
+
+# Ignore security files
+*.pem
+*.key
+*.crt
+*.pfx
+
+# Ignore site maps generated during testing
+sitemap.xml.bak
+sitemap-dev.xml
+sitemap-temp.xml
+
+# Prevent accidental commit of drafts
+drafts/
+*draft*
+
+# ---------------------------------
+# End of file
+# ---------------------------------
